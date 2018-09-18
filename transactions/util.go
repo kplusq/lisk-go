@@ -36,7 +36,8 @@ func (t *Transaction) Fee() (uint32, error) {
 	switch t.Type {
 	case TransactionTypeNormal:
 		if t.Asset != nil {
-			return feeSend + feeData, nil
+// 			return feeSend + feeData, nil
+			return feeSend, nil
 		}
 		return feeSend, nil
 	case TransactionTypeSecondSecretRegistration:
